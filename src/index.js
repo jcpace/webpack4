@@ -1,8 +1,15 @@
 import _ from 'lodash';
-function component() {
-  let element = document.createElement('div');
+import './style.css';
+import Icon from './icon.png';
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+function component() {
+  const element = document.createElement('div');
+
+  element.innerHTML = _.join(['Hello', 'webpack'], ' - ');
+  element.classList.add('hello');
+  const myIcon = new Image();
+  myIcon.src = Icon;
+  element.append(myIcon);
 
   return element;
 }
